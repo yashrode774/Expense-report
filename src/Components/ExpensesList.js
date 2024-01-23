@@ -24,16 +24,12 @@ const ExpensesList = () => {
       {csvData.length > 0 && (
         <table>
           <thead>
-            <tr>
-              {/* Render column names in table header */}
-              {Object.keys(csvData[0]).map((columnName, index) => (
-                <th key={index}>{columnName}</th>
-              ))}
-            </tr>
+
           </thead>
           <tbody>
             {/* Render list items in table rows */}
-            {csvData.map((row, rowIndex) => (
+            {
+              csvData.map((row, rowIndex) => (
               <tr key={rowIndex}>
                 {Object.values(row).map((value, colIndex) => (
                   <td key={colIndex}>{value}</td>
